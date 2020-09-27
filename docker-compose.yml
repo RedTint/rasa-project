@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+    rasa:
+        build: ./rasa-os-server
+        # image: rasa/rasa:latest-full
+        container_name: rasa-ros
+        volumes:
+          - ./:/app
