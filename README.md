@@ -69,27 +69,27 @@ It seems like, it's looking for `core` and `nlu` default folders which can't be 
 
 #### LOCAL ENVIRONMENT
 
-1. Fix my local environment Python Installment
-2. Install RASA Open Source Locally
-3. Run initial training with default NLU Training Data
-   - Run `rasa train` to generate a model, a.k.a `model 1`
-   - Run another training with another data, a.k.a `model 2`
+1. [x] Fix my local environment Python Installment
+2. [x] Install RASA Open Source Locally
+3. [x] Run initial training with default NLU Training Data
+   - [x] Run `rasa train` to generate a model, a.k.a `model 1`
+   - [x] Run another training with another data, a.k.a `model 2`
    - GOAL - generate two different models with two different training data
-4. Test if it works using command line
+4. [x] Test if it works using command line
    - Run `rasa shell`
    - Chat with the bot
-5. Test API functionality by starting the Rasa Server
-   - Run `rasa run`
-   - Load `model 1` of the models using the API
-   - Test chat
-   - Load `model 2`
-   - Test Chat
+5. [x] Test API functionality by starting the Rasa Server
+   - [x] Run `rasa run`
+   - [x] Load `model 1` of the models using the API
+   - [x] Test chat
+   - [ ] Load `model 2`
+   - [ ] Test Chat
 
 #### DOCKERIZED ENVIRONMENT
 Using the installation process for Rasa Open Source, build a dockerized environment for working with rasa.
-1. Build the Dockerfile with Python as base
-2. Install Rasa libraries
-3. Run initial training with `rasa train` via Dockerfile
-4. Set Entrypoint as `rasa`
-5. Run CMD `run` - this should start the server
-6. Test the trained model via API, use
+1. [ ] Build the Dockerfile with Python as base
+2. [ ] Install Rasa libraries
+3. [ ] Run initial training with `rasa train` via Dockerfile
+4. [ ] Set Entrypoint as `rasa`
+5. [ ] Run CMD `run` - this should start the server
+6. [ ] Test the trained model via API, use
