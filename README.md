@@ -87,12 +87,16 @@ It seems like, it's looking for `core` and `nlu` default folders which can't be 
 
 #### DOCKERIZED ENVIRONMENT
 Using the installation process for Rasa Open Source, build a dockerized environment for working with rasa.
-1. [ ] Build the Dockerfile with Python as base
-2. [ ] Install Rasa libraries
+1. [x] Build the Dockerfile with Python as base
+2. [x] Install Rasa libraries
 3. [ ] Run initial training with `rasa train` via Dockerfile
-4. [ ] Set Entrypoint as `rasa`
-5. [ ] Run CMD `run` - this should start the server
-6. [ ] Test the trained model via API, use
+4. [x] Set Entrypoint as `rasa`
+5. [ ] Run CMD `['run', '--enable-api']` - this should start the server
+6. [ ] Test initially trained model
+7. [ ] Question: Do I need to have an initially trained model as my base? or is it okay to always start from scratch using `rasa train`? :thinking:
+7. [ ] Test training via API - train 2 - 3 different models
+8. [ ] Test load/unloading of models
+9. [ ] Question: Is it possible to create different sets of testing materials?
 
 ### Notes
 * Response when running `rasa run` without trained models

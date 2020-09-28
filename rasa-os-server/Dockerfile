@@ -26,11 +26,12 @@ RUN apt-get update -qq && \
 
 RUN pip3 install rasa==2.0.0rc2
 
-# update permissions & change user to not run as root
-
 RUN mkdir /usr/src/app
 COPY ./ /usr/src/app/
 WORKDIR /usr/src/app
+
+# Create volume for temporary data
+VOLUME /tmp
 
 # Print the rasa version for added confirmation
 RUN rasa --version
