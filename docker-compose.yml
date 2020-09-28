@@ -6,4 +6,4 @@ services:
         # image: rasa/rasa:latest-full
         container_name: rasa-ros
         volumes:
-          - ./:/app
+          - ./rasa-os-server:/usr/src/app
