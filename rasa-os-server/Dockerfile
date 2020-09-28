@@ -34,12 +34,9 @@ WORKDIR /usr/src/app
 
 # Print the rasa version for added confirmation
 RUN rasa --version
+
 # We longer need to init since we have the initial files available
 # RUN rasa init --no-prompt
-
-# Print the available models
-RUN ls
-RUN ls ./models
 
 # Run training
 RUN echo -e "no\n" | rasa train
@@ -49,4 +46,4 @@ EXPOSE 5005
 
 # Run Rasa OS Server
 ENTRYPOINT ["rasa"]
-CMD ["run"]
+CMD ["run", "--enable-api"]

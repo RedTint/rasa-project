@@ -93,3 +93,14 @@ Using the installation process for Rasa Open Source, build a dockerized environm
 4. [ ] Set Entrypoint as `rasa`
 5. [ ] Run CMD `run` - this should start the server
 6. [ ] Test the trained model via API, use
+
+### Notes
+* Response when running `rasa run` without trained models
+```
+$ rasa run
+No model found. You have three options to provide a model:
+1. Configure a model server in the endpoint configuration and provide the configuration via '--endpoints'.
+2. Specify a remote storage via '--remote-storage' to load the model from.
+3. Train a model before running the server using `rasa train` and use '--model' to provide the model path.
+For more information check https://rasa.com/docs/rasa/model-storage.
+```
