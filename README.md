@@ -59,11 +59,15 @@ After a few debugging here and there, I encountered not being able to run `rasa 
 ### Working with Docker
 
 ### Issues
-* Currently having issues with this:
+* Issue with training model for the first time (./models don't have any model content). For some reason, rasa is not able to store models in the `./models` folder despite having to successfully train. This doesn't happen when the `./models` folder already contains a model to start.
+  * We might need to train a model and have the stored indefinitely in our `./models` folder as our base?
+
+* [RESOLVED] Currently having issues with this:
 ```
 rasa.exceptions.ModelNotFound: No NLU or Core data for unpacked model at: '/var/folders/4m/6prcxkh10s71tzn6frvdy7lm0000gn/T/tmpk5ekiq3q'
 ```
 It seems like, it's looking for `core` and `nlu` default folders which can't be found when simply running `rasa train --fixed-model-name ./models/model.tar.gz`.
+
 
 ### Steps To Do Again
 
@@ -107,4 +111,38 @@ No model found. You have three options to provide a model:
 2. Specify a remote storage via '--remote-storage' to load the model from.
 3. Train a model before running the server using `rasa train` and use '--model' to provide the model path.
 For more information check https://rasa.com/docs/rasa/model-storage.
+```
+
+* Running with `rasa run` with already trained model logs:
+```
+Step 11/14 : RUN echo -e "no\n" | rasa train
+ ---> Running in fa8a1582ed4d
+2020-09-30 07:48:47 WARNING  rasa.shared.utils.validation  - Training data file data/rules.yml doesn't have a 'version' key. Rasa Open Source will read the file as a version '2.0' file. See https://rasa.com/docs/rasa.
+Nothing changed. You can use the old model stored at '/usr/src/app/models/20200929-141249.tar.gz'.
+```
+
+* Rasa will always load the server with the latest trained model upon running `docker-compose up`.
+
+  * I attempted to remove the last model and re-run `docker-compose` and found out that it ran training again. This means that rasa **probably** keeps track of the last trained model somewhere in cache or some file.
+
+* If you delete the models stored in folder `./models`, while a model is already loaded, it doesn't affect the Rasa Server.
+
+* If no model was loaded, you will get something like this:
+```
+{
+    "config": {
+        "store_entities_as_slots": true
+    },
+    "session_config": {
+        "session_expiration_time": 0,
+        "carry_over_slots_to_new_session": true
+    },
+    "intents": [],
+    "entities": [],
+    "slots": {},
+    "responses": {},
+    "actions": [],
+    "forms": {},
+    "e2e_actions": []
+}
 ```
