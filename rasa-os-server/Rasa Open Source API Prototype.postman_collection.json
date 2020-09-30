@@ -1,0 +1,365 @@
+{
+	"info": {
+		"_postman_id": "00d5ed56-9a4b-413e-b1d1-84bc205ae7e6",
+		"name": "Rasa Open Source Basics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[Done] Model Parse - Color",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"color\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5005/model/parse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5005",
+					"path": [
+						"model",
+						"parse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bot Interaction - Send Message - favorite_color",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"What is your favorite color?\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5005/webhooks/rest/webhook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5005",
+					"path": [
+						"webhooks",
+						"rest",
+						"webhook"
+					]
+				},
+				"description": "Responds immediately. Doesn't need a callback URL."
+			},
+			"response": []
+		},
+		{
+			"name": "Bot Interaction - Send Message - Do you have friends?",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"What is your favorite color?\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5005/webhooks/rest/webhook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5005",
+					"path": [
+						"webhooks",
+						"rest",
+						"webhook"
+					]
+				},
+				"description": "Responds immediately. Doesn't need a callback URL."
+			},
+			"response": []
+		},
+		{
+			"name": "Bot Interaction - Send Message - HTTP Trained Model",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"I am sad\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5005/webhooks/rest/webhook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5005",
+					"path": [
+						"webhooks",
+						"rest",
+						"webhook"
+					]
+				},
+				"description": "Responds immediately. Doesn't need a callback URL."
+			},
+			"response": []
+		},
+		{
+			"name": "Bot Interaction - Send Message - Hi / Who are you?",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"I am sad\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5005/webhooks/rest/webhook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5005",
+					"path": [
+						"webhooks",
+						"rest",
+						"webhook"
+					]
+				},
+				"description": "Responds immediately. Doesn't need a callback URL."
+			},
+			"response": []
+		},
+		{
+			"name": "[DONE] Model Load - Model with FF Updates v1.0",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"model_file\": \"./models/20200929-141249.tar.gz\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5005/model",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5005",
+					"path": [
+						"model"
+					]
+				},
+				"description": "### Replace the currently loaded model\nUpdates the currently loaded model.\n* First, tries to load the model from the local storage system. \n* Secondly, tries to load the model from the provided model server configuration.\n* Last, tries to load the model from the provided remote storage.\n\nResponds with `204 No Content` when successful.\n\nTakes around 15-20 seconds to load new model."
+			},
+			"response": []
+		},
+		{
+			"name": "[DONE] Model Load - Model from API Training (model w/o friends)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"model_file\": \"./models/20200930-092627.tar.gz\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5005/model",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5005",
+					"path": [
+						"model"
+					]
+				},
+				"description": "### Replace the currently loaded model\nUpdates the currently loaded model.\n* First, tries to load the model from the local storage system. \n* Secondly, tries to load the model from the provided model server configuration.\n* Last, tries to load the model from the provided remote storage.\n\nResponds with `204 No Content` when successful.\n\nTakes around 15-20 seconds to load new model."
+			},
+			"response": []
+		},
+		{
+			"name": "[DONE] Model Load - Model with favorite color",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"model_file\": \"./models/20200927-230117.tar.gz\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5005/model",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5005",
+					"path": [
+						"model"
+					]
+				},
+				"description": "### Replace the currently loaded model\nUpdates the currently loaded model.\n* First, tries to load the model from the local storage system. \n* Secondly, tries to load the model from the provided model server configuration.\n* Last, tries to load the model from the provided remote storage.\n\nResponds with `204 No Content` when successful.\n\nTakes around 15-20 seconds to load new model."
+			},
+			"response": []
+		},
+		{
+			"name": "[DONE] Model Unload",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5005/model",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5005",
+					"path": [
+						"model"
+					]
+				},
+				"description": "Model simply returns `204 No Content` once successul on unloading model."
+			},
+			"response": []
+		},
+		{
+			"name": "[DONE] Model Train via API - Default",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"domain\": \"intents:\\n  - greet\\n  - goodbye\\n  - affirm\\n  - deny\\n  - mood_great\\n  - mood_unhappy\\n\\nresponses:\\n  utter_greet:\\n  - text: \\\"Hey! How are you?\\\"\\n\\n  utter_cheer_up:\\n  - text: \\\"Here is something to cheer you up!:\\\"\\n    image: \\\"https://i.imgur.com/nGF1K8f.jpg\\\"\\n\\n  utter_did_that_help:\\n  - text: \\\"Did that help you?\\\"\\n\\n  utter_happy:\\n  - text: \\\"Great carry on!\\\"\\n\\n  utter_goodbye:\\n  - text: \\\"Bye\\\"\",\n\"config\": \"language: en\\n\\npipeline:\\n  - name: WhitespaceTokenizer\\n  - name: RegexFeaturizer\\n  - name: LexicalSyntacticFeaturizer\\n  - name: CountVectorsFeaturizer\\n    analyzer: char_wb\\n    min_ngram: 1\\n    max_ngram: 4\\n  - name: DIETClassifier\\n    epochs: 100\\n  - name: EntitySynonymMapper\\n  - name: ResponseSelector\\n    epochs: 100\\npolicies:\\n  - name: MemoizationPolicy\\n  - name: TEDPolicy\\n    max_history: 5\\n    epochs: 100\\n  - name: RulePolicy\",\n\"nlu\": \"## intent:greet\\n- hey\\n- hello\\n- hi\\n## intent:goodbye\\n- bye\\n- goodbye\\n- have a nice day\\n- see you\\n## intent:affirm\\n- yes\\n- indeed\\n## intent:deny\\n- no\\n- never\\n## intent:mood_great\\n- perfect\\n- very good\\n- great\\n## intent:mood_unhappy\\n- sad\\n- not good\\n- unhappy\",\n\"responses\": \"## ask name * chitchat/ask_name\\n    - my name is Sara, Rasa's documentation bot!\\n\\n## ask weather * chitchat/ask_weather\\n    - it's always sunny where I live\",\n\"stories\": \"## happy path\\n* greet\\n\\n  - utter_greet\\n\\n* mood_great\\n\\n  - utter_happy\\n\\n## sad path 1\\n* greet\\n\\n  - utter_greet\\n\\n* mood_unhappy\\n\\n  - utter_cheer_up\\n\\n  - utter_did_that_help\\n\\n* affirm\\n\\n  - utter_happy\\n\\n## sad path 2\\n* greet\\n\\n  - utter_greet\\n\\n* mood_unhappy\\n\\n  - utter_cheer_up\\n\\n  - utter_did_that_help\\n\\n* deny\\n\\n  - utter_goodbye\\n\\n## say goodbye\\n* goodbye\\n\\n  - utter_goodbye\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5005/model/train",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5005",
+					"path": [
+						"model",
+						"train"
+					]
+				},
+				"description": "* Runs training through the API. \n* Seems like the documentation wasn't updated. It returned binary content through the API, could be for downloading the content. \n* The filename was included in the header with header name `filename`\n\n### Training Stats\n* Time Elapsed: 1m 18.72s\n* File Size 22.99 MB\n* Response Format: binary\n* Useful information:\n  * Filename - found in the header"
+			},
+			"response": []
+		},
+		{
+			"name": "[TO DO] Model Train via API - FF Content",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"domain\": \"intents:\\n  - greet\\n  - goodbye\\n  - affirm\\n  - deny\\n  - mood_great\\n  - mood_unhappy\\n\\nresponses:\\n  utter_greet:\\n  - text: \\\"Hey! How are you?\\\"\\n\\n  utter_cheer_up:\\n  - text: \\\"Here is something to cheer you up!:\\\"\\n    image: \\\"https://i.imgur.com/nGF1K8f.jpg\\\"\\n\\n  utter_did_that_help:\\n  - text: \\\"Did that help you?\\\"\\n\\n  utter_happy:\\n  - text: \\\"Great carry on!\\\"\\n\\n  utter_goodbye:\\n  - text: \\\"Bye\\\"\",\n\"config\": \"language: en\\n\\npipeline:\\n  - name: WhitespaceTokenizer\\n  - name: RegexFeaturizer\\n  - name: LexicalSyntacticFeaturizer\\n  - name: CountVectorsFeaturizer\\n    analyzer: char_wb\\n    min_ngram: 1\\n    max_ngram: 4\\n  - name: DIETClassifier\\n    epochs: 100\\n  - name: EntitySynonymMapper\\n  - name: ResponseSelector\\n    epochs: 100\\npolicies:\\n  - name: MemoizationPolicy\\n  - name: TEDPolicy\\n    max_history: 5\\n    epochs: 100\\n  - name: RulePolicy\",\n\"nlu\": \"## intent:greet\\n- hey\\n- hello\\n- hi\\n## intent:goodbye\\n- bye\\n- goodbye\\n- have a nice day\\n- see you\\n## intent:affirm\\n- yes\\n- indeed\\n## intent:deny\\n- no\\n- never\\n## intent:mood_great\\n- perfect\\n- very good\\n- great\\n## intent:mood_unhappy\\n- sad\\n- not good\\n- unhappy\",\n\"responses\": \"## ask name * chitchat/ask_name\\n    - my name is Sara, Rasa's documentation bot!\\n\\n## ask weather * chitchat/ask_weather\\n    - it's always sunny where I live\",\n\"stories\": \"## happy path\\n* greet\\n\\n  - utter_greet\\n\\n* mood_great\\n\\n  - utter_happy\\n\\n## sad path 1\\n* greet\\n\\n  - utter_greet\\n\\n* mood_unhappy\\n\\n  - utter_cheer_up\\n\\n  - utter_did_that_help\\n\\n* affirm\\n\\n  - utter_happy\\n\\n## sad path 2\\n* greet\\n\\n  - utter_greet\\n\\n* mood_unhappy\\n\\n  - utter_cheer_up\\n\\n  - utter_did_that_help\\n\\n* deny\\n\\n  - utter_goodbye\\n\\n## say goodbye\\n* goodbye\\n\\n  - utter_goodbye\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5005/model/train",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5005",
+					"path": [
+						"model",
+						"train"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[Done] Get current model Domain Specs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5005/domain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5005",
+					"path": [
+						"domain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rasa Custom Channel Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
