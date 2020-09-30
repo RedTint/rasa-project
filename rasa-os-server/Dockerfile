@@ -30,17 +30,17 @@ RUN mkdir /usr/src/app
 COPY ./ /usr/src/app/
 WORKDIR /usr/src/app
 
-# Create volume for temporary data
-VOLUME /tmp
+# RUN useradd -ms /bin/bash admin
+# RUN chown -R admin:admin /usr/src/app
+# RUN chmod -R 777 /usr/src/app
+# USER admin
 
 # Print the rasa version for added confirmation
 RUN rasa --version
 
-# We longer need to init since we have the initial files available
-# RUN rasa init --no-prompt
-
-# Run training
-RUN echo -e "no\n" | rasa train
+# # [BUG] Run training - initially trained model doesn't get stored in ./models folder
+# # We can always run training through an API call
+# RUN echo -e "no\n" | rasa train --fixed-model-name base-model
 
 # the entry point
 EXPOSE 5005

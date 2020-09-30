@@ -146,3 +146,7 @@ Nothing changed. You can use the old model stored at '/usr/src/app/models/202009
     "e2e_actions": []
 }
 ```
+
+* Can we run model training via API without a previously trained model? **Answer: ** Yes.
+
+* Can we run `rasa run` without an available `pre-trained` model? **Answer:** Yes.

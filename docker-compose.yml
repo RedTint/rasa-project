@@ -7,6 +7,5 @@ services:
         container_name: rasa-ros
         volumes:
           - ./rasa-os-server:/usr/src/app
-          - ./rasa-os-server/models:/usr/src/app/models
         ports:
           - 5005:5005
