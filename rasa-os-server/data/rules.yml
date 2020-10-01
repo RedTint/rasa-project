@@ -11,8 +11,3 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
-
-- rule: Respond with favorite color
-  steps:
-  - intent: favorite_color
-  - action: utter_favorite_color
