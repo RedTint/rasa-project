@@ -9,3 +9,11 @@ services:
           - ./rasa-os-server:/usr/src/app
         ports:
           - 5005:5005
+    rasa-db:
+        image: postgres:9.6
+        environment:
+          - POSTGRES_USER=rasa
+          - POSTGRES_PASSWORD=rasa
+          - POSTGRES_DB=rasa
+        ports:
+          - 5432:5432
